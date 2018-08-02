@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+#menu{
+    width: 20%;
+    background-color: lightgray;
+    position: fixed;
+    left: 0%;
+    top: 10vh;
+}
+#top{
+    width: 100%;
+    background-color: gray;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 10vh;
+}
+#top h1#title{
+    text-align: center;
+}
+#content{
+    margin-top: 10vh;
+    width: 80%;
+    margin-left: 20%;
+    background-color: lightblue;
+}
