@@ -3,7 +3,7 @@
 
     $username = mysqli_real_escape_string($SQLConnection, $_POST['username']);
     $email = mysqli_real_escape_string($SQLConnection, $_POST['email']);
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $firstname = mysqli_real_escape_string($SQLConnection, $_POST['firstname']);
     $lastname = mysqli_real_escape_string($SQLConnection, $_POST['lastname']);
 

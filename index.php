@@ -43,12 +43,12 @@
                 Login
             </div>
             <form action="Handlers/login.php" method="post">
-                <label for="email">email: </label>
+                <label for="email">Email: </label>
                 <input type="text" name="email" placeholder="email@example.com">
 
                 <br>
 
-                <label for="password">password: </label>
+                <label for="password">Password: </label>
                 <input type="password" name="password" placeholder="password">
 
                 <div class="submitContainer">
@@ -61,36 +61,41 @@
             <div class="header">
                 Sign up
             </div>
-            <form action="Handlers/signup.php" method="post">
-                <label for="username">Username: </label>
-                <input type="text" name="username" placeholder="username">
+            <form id="SignUp" onsubmit="return CheckSignUp();" action="Handlers/signup.php" method="post">
+
+                <label for="firstname"><b>*</b>First name: </label>
+                <input type="text" class="inputFirstName" name="firstname" placeholder="John">
 
                 <br>
 
-                <label for="email">Email: </label>
-                <input type="text" name="email" placeholder="email@example.com">
+                <label for="lastname"><b>*</b>Last name: </label>
+                <input type="text" class="inputLastName" name="lastname" placeholder="Smith">
 
                 <br>
 
-                <label for="password">Password: </label>
-                <input type="password" name="password" placeholder="password">
+                <label for="username"><b>*</b>Username: </label>
+                <input type="text" class="inputUsername" name="username" placeholder="username">
 
                 <br>
 
-                <label for="confirmpassword">Confirm password: </label>
-                <input type="password" name="confirmpassword" placeholder="same password as above">
+                <label for="email"><b>*</b>Email: </label>
+                <input type="text" class="inputEmail" name="email" placeholder="email@example.com">
 
                 <br>
 
-                <label for="firstname">First name: </label>
-                <input type="text" name="firstname" placeholder="John">
+                <label for="password"><b>*</b>Password: </label>
+                <input type="password" class="inputPassword" name="password" placeholder="password">
 
                 <br>
 
-                <label for="lastname">Last name: </label>
-                <input type="text" name="lastname" placeholder="Smith">
+                <label for="confirmpassword"><b>*</b>Confirm password: </label>
+                <input type="password" class="inputConfirmPassword" name="confirmpassword" placeholder="same password as above">
 
-                <br>
+                <br>               
+
+                <div class="errors">
+
+                </div>
 
                 <div class="submitContainer">
                     <input type=submit class="submit" value="Sign up">
@@ -98,9 +103,8 @@
             </form>
         </div>
         
-        
     </div>
-
+    <script src="scripts/LoginAndSignUp.js"></script>
 </body>
 
 </html>

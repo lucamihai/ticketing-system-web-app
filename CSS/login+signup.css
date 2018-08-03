@@ -28,3 +28,8 @@
     font-size: 150%;
     padding-bottom: 2.5vh;
 }
+.errors{
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
