@@ -1,0 +1,30 @@
+.formBox{
+    align-content: center;
+    width: 50%;
+    float: left;
+    background-color: lightcyan;
+    padding-top: 1vh;
+    padding-bottom: 1vh;    
+}
+.formBox label{
+    display: inline-block;
+    padding-bottom: 0.5vh;
+    padding-top: 0.5vh;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+.formBox input{
+    display: inline-block;
+    padding: 0.5vh;
+}
+.formBox .submitContainer{
+    text-align: center;
+    padding-bottom: 0.5vh;
+    padding-top: 0.5vh;
+}
+.formBox .header{
+    text-align: center;
+    font-size: 150%;
+    padding-bottom: 2.5vh;
+}
