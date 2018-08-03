@@ -62,6 +62,11 @@
                 Sign up
             </div>
             <form action="Handlers/signup.php" method="post">
+                <label for="username">Username: </label>
+                <input type="text" name="username" placeholder="username">
+
+                <br>
+
                 <label for="email">Email: </label>
                 <input type="text" name="email" placeholder="email@example.com">
 

@@ -1,2 +1,4 @@
 <p> WIP </p>
-header("refresh: 1; url=../index.php"); 
+<?php
+    header("refresh: 1; url=../index.php"); 
+?>
