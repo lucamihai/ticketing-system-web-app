@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
     include("../SQL/DatabaseConnection.php");
 
@@ -13,7 +14,16 @@
         $dbPasswordHash = $row['password'];
 
         if (password_verify($password, $dbPasswordHash)){
+            $username = $row['username'];
+            $email = $row['email'];
+            $firstname = $row['first_name'];
+            $lastname = $row['last_name'];
+
+            UserLogin($username, $email, $firstname, $lastname);
+
             echo "Log In was successful (with email)";
+
+            header("refresh:1;url=../index.php");
             return;
         }   
     }
@@ -27,10 +37,28 @@
         $dbPasswordHash = $row['password'];
 
         if (password_verify($password, $dbPasswordHash)){
+            $username = $row['username'];
+            $email = $row['email'];
+            $firstname = $row['first_name'];
+            $lastname = $row['last_name'];
+
+            UserLogin($username, $email, $firstname, $lastname);
+
             echo "Log In was successful (with username)";
+
+            header("refresh:1;url=../index.php");
             return;
         }
     }  
     
     echo "The user doesn't exist or the password you've entered is incorrect";
+?>
+
+<?php
+    function UserLogIn($username, $email, $firstname, $lastname) {
+        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
+        $_SESSION['first_name'] = $firstname;
+        $_SESSION['last_name'] = $lastname;
+    }
 ?>
