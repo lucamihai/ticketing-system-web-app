@@ -28,28 +28,29 @@
         <?php
             include "/SQL/DatabaseConnection.php";
 
-            $sql="SELECT 1 FROM users";
+            $sql = "SELECT 1 FROM users";
             $result = mysqli_query($SQLConnection, $sql);
             if (!$result){
                 //there's no 'users' table, so there will be one created
                 include("SQL/createUsersTable.php");
-            }
-
-            $sql = "SELECT * FROM test_users";
-            $result = mysqli_query($SQLConnection ,$sql);         
+            }      
         ?>
         <div class="formBox">
             <div class="header">
                 Login
             </div>
-            <form action="Handlers/login.php" method="post">
-                <label for="email">Email: </label>
-                <input type="text" name="email" placeholder="email@example.com">
+            <form id="Login" onsubmit="return CheckLogin();" action="Handlers/login.php" method="post">
+                <label for="email"><b>*</b>Email or Username: </label>
+                <input type="text" class="inputIdentifier" name="identifier" placeholder="you@email.com">
 
                 <br>
 
-                <label for="password">Password: </label>
-                <input type="password" name="password" placeholder="password">
+                <label for="password"><b>*</b>Password: </label>
+                <input type="password" class="inputPassword" name="password" placeholder="password">
+
+                <div class="errors">
+
+                </div>
 
                 <div class="submitContainer">
                     <input type=submit class="submit" value="Log in">
@@ -89,9 +90,7 @@
                 <br>
 
                 <label for="confirmpassword"><b>*</b>Confirm password: </label>
-                <input type="password" class="inputConfirmPassword" name="confirmpassword" placeholder="same password as above">
-
-                <br>               
+                <input type="password" class="inputConfirmPassword" name="confirmpassword" placeholder="same password as above">              
 
                 <div class="errors">
 
