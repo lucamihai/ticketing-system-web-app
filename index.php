@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    
+    //if the user is logged in, redirect to dashboard
+    if (isset($_SESSION['username'])){
+        header("refresh:0;url=dashboard.php");
+    }
+?>
 <html lang="en">
 
 <head>
@@ -10,7 +17,7 @@
     <link rel="stylesheet" href="CSS/login+signup.css">
 </head>
 
-<body onload="FillerText(document.getElementById('content'))">
+<body>
     <div id="top">
         <?php
             $_GET['title'] = "Landing page";
@@ -25,16 +32,6 @@
     </div>
 
     <div id="content">
-        <?php
-            include "/SQL/DatabaseConnection.php";
-
-            $sql = "SELECT 1 FROM users";
-            $result = mysqli_query($SQLConnection, $sql);
-            if (!$result){
-                //there's no 'users' table, so there will be one created
-                include("SQL/createUsersTable.php");
-            }      
-        ?>
         <div class="formBox">
             <div class="header">
                 Login

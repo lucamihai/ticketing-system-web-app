@@ -4,5 +4,5 @@
 
     echo "Succesfully logged out";
 
-    header("refresh:1;url=../index.php");
+    header("refresh:0;url=../index.php");
 ?>
