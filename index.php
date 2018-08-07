@@ -15,6 +15,7 @@
     <title>Ticketing System</title>
     <link rel="stylesheet" href="CSS/layout.css">
     <link rel="stylesheet" href="CSS/login+signup.css">
+    <script src="scripts/LoginAndSignUp.js"></script>
 </head>
 
 <body>
@@ -90,7 +91,9 @@
                 <input type="password" class="inputConfirmPassword" name="confirmpassword" placeholder="same password as above">              
 
                 <div class="errors">
-
+                    <?php                       
+                        include("Handlers/signupErrors.php");
+                    ?>
                 </div>
 
                 <div class="submitContainer">
@@ -100,7 +103,7 @@
         </div>
         
     </div>
-    <script src="scripts/LoginAndSignUp.js"></script>
+    
 </body>
 
 </html>

@@ -37,7 +37,7 @@ function CheckSignUp() {
     var InputEmail = SignUpForm.getElementsByClassName("inputEmail")[0];
     var InputPassword = SignUpForm.getElementsByClassName("inputPassword")[0];
     var InputConfirmPassword = SignUpForm.getElementsByClassName("inputConfirmPassword")[0];
-    1
+    
     var firstName = InputFirstName.value;
     var lastName = InputLastName.value;
     var username = InputUsername.value;
@@ -97,4 +97,19 @@ function validateEmail(email) {
 function GenerateErrorDiv(message) {
     //place every error message in a separate div
     return "<div>" + message + "</div>";
+}
+
+function ReenterSignUpValues(firstname, lastname, username, email){
+
+    var SignUpForm = document.getElementById("SignUp");
+
+    var InputFirstName = SignUpForm.getElementsByClassName("inputFirstName")[0];
+    var InputLastName = SignUpForm.getElementsByClassName("inputLastName")[0];
+    var InputUsername = SignUpForm.getElementsByClassName("inputUsername")[0];
+    var InputEmail = SignUpForm.getElementsByClassName("inputEmail")[0];
+
+    InputFirstName.value = firstname;
+    InputLastName.value = lastname;
+    InputUsername.value = username;
+    InputEmail.value = email;
 }
