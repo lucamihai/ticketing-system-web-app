@@ -113,3 +113,13 @@ function ReenterSignUpValues(firstname, lastname, username, email){
     InputUsername.value = username;
     InputEmail.value = email;
 }
+
+function ReenterLogInValues(identifier){
+
+    var LoginForm = document.getElementById("Login");
+
+    var InputIdentifier = LoginForm.getElementsByClassName("inputIdentifier")[0];
+
+    InputIdentifier.value = identifier;
+
+}

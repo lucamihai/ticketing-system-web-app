@@ -3,6 +3,8 @@
 
     include("../SQL/DatabaseConnection.php");
 
+    $loggedIn = false;
+
     $identifier = mysqli_real_escape_string($SQLConnection, $_POST['identifier']);
     $password = $_POST['password'];
 
@@ -24,10 +26,7 @@
 
             UserLogin($username, $email, $firstname, $lastname, $usertype);
 
-            echo "Log In was successful (with email)";
-
-            header("refresh:0;url=../index.php");
-            return;
+            $loggedIn = true;
         }   
     }
 
@@ -49,14 +48,20 @@
 
             UserLogin($username, $email, $firstname, $lastname, $usertype);
 
-            echo "Log In was successful (with username)";
-
-            header("refresh:0;url=../dashboard.php");
-            return;
+            $loggedIn = true;
         }
-    }  
+    }
     
-    echo "The user doesn't exist or the password you've entered is incorrect";
+    if ($loggedIn){
+        header("refresh:0;url=../dashboard.php");       
+    }
+
+    else{
+        $_SESSION['LogInErrorCombination'] = "Combination not found";
+        $_SESSION['identifierRestore'] = $identifier;
+
+        header("refresh:0;url=../index.php"); 
+    }
 ?>
 
 <?php

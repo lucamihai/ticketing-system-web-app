@@ -28,7 +28,7 @@
         $_SESSION['firstnameRestore'] = $firstname;
         $_SESSION['lastnameRestore'] = $lastname;
 
-        header("refresh:0;url=../dashboard.php");
+        header("refresh:0;url=../index.php");
     }
     else{
         $registrationQuery = "INSERT INTO users (username, first_name, last_name, email, password ) VALUES ('$username', '$firstname', '$lastname', '$email', '$password')";

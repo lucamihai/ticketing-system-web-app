@@ -1,5 +1,6 @@
 <?php
     $error = false;
+    
     if (isset($_SESSION['SignUpErrorUsername'])){
         $error = true;
         echo "<div>".$_SESSION['SignUpErrorUsername']."</div>";

@@ -47,7 +47,9 @@
                 <input type="password" class="inputPassword" name="password" placeholder="password">
 
                 <div class="errors">
-
+                    <?php                       
+                        include("Handlers/loginErrors.php");
+                    ?>
                 </div>
 
                 <div class="submitContainer">
