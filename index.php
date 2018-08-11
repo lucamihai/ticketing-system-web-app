@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    
+    //
     //if the user is logged in, redirect to dashboard
     if (isset($_SESSION['username'])){
         header("refresh:0;url=dashboard.php");
